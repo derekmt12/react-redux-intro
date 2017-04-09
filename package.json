@@ -1,0 +1,28 @@
+{
+  "name": "react-redux-intro",
+  "version": "1.0.0",
+  "description": "Intro to React and Redux",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/derekmt12/react-redux-intro.git"
+  },
+  "author": "Derek Davis",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/derekmt12/react-redux-intro/issues"
+  },
+  "homepage": "https://github.com/derekmt12/react-redux-intro#readme",
+  "devDependencies": {
+    "react-scripts": "^0.9.5"
+  },
+  "dependencies": {
+    "react": "^15.5.3",
+    "react-dom": "^15.5.3"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject"
+  }
+}
