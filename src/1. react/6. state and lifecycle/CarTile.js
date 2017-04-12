@@ -26,13 +26,15 @@ export default class CarTile extends Component {
             <div>
                 <h2>{car.manufacturer} {car.model}</h2>
                 <div>{car.cost}</div>
-                { this.state.reviews.slice(0, 3).map((review, i) =>
-                    <div>
-                        <h4>{review.title}</h4>
-                        <div>{review.rating}/5</div>
-                        <p>{review.text}</p>
-                    </div>
-                ) }
+                { this.state.reviews
+                    .slice(0, 3)
+                    .map((review, i) =>
+                        <div>
+                            <h4>{review.title}</h4>
+                            <div>{review.rating}/5</div>
+                            <p>{review.text}</p>
+                        </div>)
+                }
             </div>
         );
     }
