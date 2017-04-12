@@ -1,32 +1,41 @@
 import React, { Component } from 'react';
-import TechnologyTile from './components/TechnologyTile';
+import { connect } from 'react-redux';
+import { searchCars } from './actions';
 import logo from './logo.svg';
 import './App.css';
 
-//TODO: show connect, and make it dispatch events
-
 class App extends Component {
-  render() {
-    return (
-      <div>
-        <div className="App">
-          <div className="App-header">
-            <img src={logo} className="App-logo" alt="logo" />
-            <h2>Welcome to React</h2>
-          </div>
-          <p className="App-intro">
-            To get started, edit <code>src/App.js</code> and save to reload.
-          </p>
-        </div>
-        <div style={{padding: '10px'}}>
-            <TechnologyTile title="C#" description="" />
-            <TechnologyTile title="Angular" />
-            <TechnologyTile title="React" />
-            <TechnologyTile title="Node" />
-        </div>
-      </div>
-    );
-  }
+	render() {
+		const { cars, search } = this.props;
+		return (
+			<div className="App">
+				<div>
+					<label>Search</label>
+					<input type="text" value={search} onChange={this.onSearchChange.bind(this, e.target.value)} />
+				</div>
+				<ul>
+					{ cars.map((car, index) => {
+						<li key={index}>{car.name}</li>
+					})}
+				</ul>
+			</div>
+		);
+	}
+
+	onSearchChange(search) {
+		const { dispatch } = this.props;
+		dispatch(searchCars(search));
+	}
 }
 
-export default App;
+function mapStateToProps(state) {
+	let cars = state.search
+		? state.cars.filter(car => car.name.indexOf(state.search) > -1)
+		: state.cars;
+	return {
+		cars: cars,
+		search: state.search
+	};
+}
+
+export default connect(mapStateToProps)(App);
