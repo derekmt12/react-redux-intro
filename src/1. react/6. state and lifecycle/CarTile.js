@@ -10,16 +10,6 @@ export default class CarTile extends Component {
         };
     }
 
-    componentDidMount() {
-        const { car } = this.props;
-
-        fetch(`car/${car.id}/reviews`).then(response => {
-            this.setState({
-                reviews: response.json()
-            });
-        });
-    }
-
     render() {
         const { car } = this.props;
         return (
@@ -37,5 +27,13 @@ export default class CarTile extends Component {
                 }
             </div>
         );
+    }
+
+    componentDidMount() {
+        const { car } = this.props;
+
+        fetch(`car/${car.id}/reviews`)
+            .then(response => response.json())
+            .then(reviews => this.setState({ reviews }));
     }
 }

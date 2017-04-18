@@ -1,0 +1,5 @@
+[
+    { "id": 1, "name": "Bugatti Chiron", "imageUrl": "images/bugatti-chiron.jpeg" },
+    { "id": 2, "name": "McLaren P1", "imageUrl": "images/mclaren_p1.jpeg" },
+    { "id": 3, "name": "Corvette Z06", "imageUrl": "images/corvette_z06.jpeg" }
+]

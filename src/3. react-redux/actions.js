@@ -1,4 +1,11 @@
 
+export function receiveCars(cars) {
+    return {
+        type: 'cars.RECEIVE',
+        cars: cars
+    };
+}
+
 export function searchCars(query) {
     return {
         type: 'cars.SEARCH',
@@ -13,9 +20,9 @@ export function addCar(car) {
     };
 }
 
-export function deleteCar(car) {
+export function deleteCar(id) {
     return {
-        type: 'cars.ADD',
-        car: car
+        type: 'cars.DELETE',
+        id: id
     };
 }
