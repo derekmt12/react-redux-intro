@@ -8,9 +8,10 @@ export default function carsReducer(state = initialState, action) {
         case 'cars.SEARCH':
             return { ...state, search: action.search };
         case 'cars.ADD':
-            return { cars: [...state.cars, action.car] };
+            return { ...state, cars: state.cars.concat(action.car) };
         case 'cars.DELETE':
             return {
+                ...state,
                 cars: [
                     ...cars.slice(0, action.index),
                     ...cars.slice(action.index + 1)
