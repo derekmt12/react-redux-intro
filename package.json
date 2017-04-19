@@ -13,7 +13,10 @@
   },
   "homepage": "https://github.com/derekmt12/react-redux-intro#readme",
   "devDependencies": {
-    "react-scripts": "^0.9.5"
+    "react-scripts": "^0.9.5",
+    "redux-devtools": "^3.3.2",
+    "redux-devtools-dock-monitor": "^1.1.1",
+    "redux-devtools-log-monitor": "^1.2.0"
   },
   "dependencies": {
     "bootstrap": "^3.3.7",
