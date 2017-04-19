@@ -15,7 +15,7 @@ export function addCar(car) {
 
 export function deleteCar(car) {
     return {
-        type: 'cars.ADD',
+        type: 'cars.DELETE',
         car: car
     };
 }
